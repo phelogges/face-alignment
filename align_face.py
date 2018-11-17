@@ -144,9 +144,12 @@ def arg_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument("--lmks_file", dest="lmks_file",type=str,default="/mnt/data-1/data/kun.wu/data/life_photo/aligned_lmks.txt")
     parser.add_argument("--standard_coord_file",dest="standard_coord_file",type=str,default="coord_file.txt")
+    parser.add_argument("--output_dir",dest="output_dir",type=str,default="./output")
+    return parser.parse_args()
+
 if __name__ == "__main__":
     args=arg_parser()
-    f = open(args.standard_coor_file,"r")
+    f = open(args.standard_coord_file,"r")
     lines=f.readlines()
     f.close()
     lmks=[]
