@@ -161,7 +161,6 @@ def arg_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument("--lmks_file", dest="lmks_file", type=str,
                         default="lmks.txt")
-    parser.add_argument("--standard_coord_file", dest="standard_coord_file", type=str, default="coord_file.txt")
     parser.add_argument("--output_dir", dest="output_dir", type=str, default="./output")
     parser.add_argument("--img_size", dest="img_size", type=int, default=256)
     return parser.parse_args()
@@ -179,6 +178,7 @@ if __name__ == "__main__":
 
     # get landmarks
     f = open(args.lmks_file, "r")
+    # lmks.txt file write "img_path 10 coords\n" each line
     lines = f.readlines()
     f.close()
     lmks = []

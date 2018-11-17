@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e6675ce-ae42-466f-ae45-aa193cf3ce2a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/align_face.py" beforeDir="false" afterPath="$PROJECT_DIR$/align_face.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/126040009-27-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/128102266-27-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/128787661-20-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/128808052-31-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/131410107-22-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/144016056-25-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/146560489-26-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/81728801-28-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/BH67968975_001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/BH74799117_003.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +57,7 @@
           <entry key="Python Console" value="4264" />
           <entry key="gitignore" value="68" />
           <entry key="md" value="35" />
-          <entry key="py" value="1649" />
+          <entry key="py" value="1708" />
           <entry key="txt" value="166" />
         </counts>
       </usages-collector>
@@ -54,40 +65,22 @@
         <counts>
           <entry key="Markdown" value="35" />
           <entry key="PLAIN_TEXT" value="234" />
-          <entry key="Python" value="5913" />
+          <entry key="Python" value="5972" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/align_face.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1104">
-              <caret line="48" column="16" lean-forward="true" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+            <state relative-caret-position="154">
+              <caret line="180" column="58" selection-start-line="180" selection-start-column="58" selection-end-line="180" selection-end-column="58" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <marker date="1542445636397" expanded="true" signature="4922:5434" ph="..." />
+                <marker date="1542446115986" expanded="true" signature="4922:5273" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/parse_align_json.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -115,10 +108,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="53" />
-    <option name="y" value="106" />
+    <option name="x" value="256" />
+    <option name="y" value="99" />
     <option name="width" value="1499" />
-    <option name="height" value="737" />
+    <option name="height" value="895" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -198,9 +191,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="106" width="1499" height="737" extended-state="0" />
+    <frame x="53" y="106" width="1499" height="895" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2238193" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2238193" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -211,9 +204,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.33001658" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49947312" visible="true" weight="0.4941957" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49947312" weight="0.28515112" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50052685" side_tool="true" weight="0.13449024" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.29284164" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.29172143" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -363,21 +356,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/align_face.py">
+    <entry file="file://$PROJECT_DIR$/parse_align_json.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1104">
-          <caret line="48" column="16" lean-forward="true" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <marker date="1542445636397" expanded="true" signature="4922:5434" ph="..." />
-          </folding>
+        <state relative-caret-position="-115">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parse_align_json.py">
+    <entry file="file://$PROJECT_DIR$/align_face.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+        <state relative-caret-position="154">
+          <caret line="180" column="58" selection-start-line="180" selection-start-column="58" selection-end-line="180" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1542446115986" expanded="true" signature="4922:5273" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
