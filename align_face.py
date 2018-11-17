@@ -46,11 +46,11 @@ def findNonReflectiveSimilarity(uv, xy):
     X[0:M, 2] = 1
     X[M:2 * M, 3] = 1
     # u,v
-    u = uv[:, 0];
+    u = uv[:, 0]
     v = uv[:, 1]
     U = np.zeros((2 * M)).astype(np.float32)
-    U[0:M] = u;
-    U[M:2 * M] = v;
+    U[0:M] = u
+    U[M:2 * M] = v
     # Least Squares Solution
     X_trans = cv2.transpose(X)
     tmp_matrix = np.dot(X_trans, X)
@@ -58,18 +58,18 @@ def findNonReflectiveSimilarity(uv, xy):
     if flag == 1.0:
         # inv(X' * X) * X' * b        
         r = np.dot(np.dot(inv_mat, X_trans), U)
-        sc = r[0];
-        ss = r[1];
-        tx = r[2];
-        ty = r[3];
+        sc = r[0]
+        ss = r[1]
+        tx = r[2]
+        ty = r[3]
         Tinv = np.float32([[sc, -1 * ss, 0],
                            [ss, sc, 0],
                            [tx, ty, 1]])
         flag, T = cv2.invert(Tinv)
         assert (flag == 1.0)
-        T[0, 2] = 0;
-        T[1, 2] = 0.0;
-        T[2, 2] = 1;
+        T[0, 2] = 0
+        T[1, 2] = 0.0
+        T[2, 2] = 1
         return T
     else:
         return None
@@ -126,7 +126,7 @@ def align_face(lmks_pts, img, align_param):
             value = 255
         channel = get_channel(img)
         dst_img = cv2.warpAffine(img, t, (dst_w, dst_h), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT,
-                                 borderValue=(value,) * channel);
+                                 borderValue=(value,) * channel)
         dst_pts = GetAffinePoints(src, t)
         return dst_img, dst_pts
     else:
