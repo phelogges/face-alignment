@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e6675ce-ae42-466f-ae45-aa193cf3ce2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/align_face.py" beforeDir="false" afterPath="$PROJECT_DIR$/align_face.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/126040009-27-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/128102266-27-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/128787661-20-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/128808052-31-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/131410107-22-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/144016056-25-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/146560489-26-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/81728801-28-9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/BH67968975_001.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/BH74799117_003.jpg" beforeDir="false" />
-    </list>
+    <list default="true" id="9e6675ce-ae42-466f-ae45-aa193cf3ce2a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +12,7 @@
     <session id="153677731">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.5" value="1" />
@@ -191,9 +178,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="106" width="1499" height="895" extended-state="0" />
+    <frame x="256" y="99" width="1499" height="895" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2238193" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2238193" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -204,7 +191,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.33001658" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49947312" weight="0.28515112" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49947312" visible="true" weight="0.28515112" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50052685" side_tool="true" weight="0.13449024" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.29172143" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
