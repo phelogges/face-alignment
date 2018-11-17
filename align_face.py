@@ -199,7 +199,7 @@ if __name__ == "__main__":
         image = cv2.imread(path[i], 1)
         dst_image = cv2.warpAffine(image.copy(), t, (args.img_size, args.img_size))
         cv2.imwrite("{}/{}".format(args.output_dir, os.path.basename(path[i])), dst_image)
-        print("[*] Finished {}".format(i))
+        print("[*] Finished {}".format(path[i]))
 """
         align_param = AlignConfig("align.json")
         dst_img, pts =align_face(lmks[i],image,align_param)
