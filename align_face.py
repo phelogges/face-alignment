@@ -160,7 +160,7 @@ if __name__ == '__main__':
 def arg_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument("--lmks_file", dest="lmks_file", type=str,
-                        default="/mnt/data-1/data/kun.wu/data/life_photo/aligned_lmks.txt")
+                        default="lmks.txt")
     parser.add_argument("--standard_coord_file", dest="standard_coord_file", type=str, default="coord_file.txt")
     parser.add_argument("--output_dir", dest="output_dir", type=str, default="./output")
     parser.add_argument("--img_size", dest="img_size", type=int, default=256)
@@ -204,5 +204,5 @@ if __name__ == "__main__":
         align_param = AlignConfig("align.json")
         dst_img, pts =align_face(lmks[i],image,align_param)
         print(pts)
-        cv2.imwrite("/mnt/data-1/data/kun.wu/life_photo/aligned_2/{}".format(os.path.basename(path[i])), dst_img)
+        cv2.imwrite("{}".format(os.path.basename(path[i])), dst_img)
 """
