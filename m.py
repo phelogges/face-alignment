@@ -40,7 +40,7 @@ if __name__ == "__main__":
                 res = np.matmul(m_dict[i], np.concatenate(
                     [x_dict[i][j], np.array([1])])).flatten().tolist()
                 a.append(res)
-        a = np.concatenate([i], a)
+        a = np.concatenate([[i],a])
     b.append(a)
     b = np.asarray(b, str)
     np.savetxt("mx.txt", b, "%s")
