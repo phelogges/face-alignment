@@ -212,10 +212,8 @@ if __name__ == "__main__":
                                    (args.img_size, args.img_size))
         cv2.imwrite("{}/{}".format(args.output_dir, os.path.basename(i)),
                     dst_image)
-        M.append(np.concatenate([i,t.flatten()],-1))
-        print("[*] Finished {}".format(i))
-    np.savetxt("m.txt",np.asarray(M),"%s")
-
+        #print("[*] Finished {}".format(i))
+        print(i, t)
 """
         align_param = AlignConfig("align.json")
         dst_img, pts =align_face(lmks[i],image,align_param)
