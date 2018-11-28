@@ -204,10 +204,11 @@ if __name__ == "__main__":
     lines_68 = f_68.readlines()
     f_68.close()
     dict_68 = {}
-    for i in lines_68:
-        lmks = i.split()[1:]
-        lmks = np.reshape(lmks, (68, 2)).astype(np.float32)
-        dict_68[i.split()[0]] = lmks
+    for line_68 in lines_68:
+        path_68 = line_68.split()[0]
+        line_68 = line_68.split()[1:]
+        line_68 = np.reshape(line_68, (68, 2)).astype(np.float32)
+        dict_68[path_68] = line_68
 
     # align
     if not os.path.exists(args.output_dir):
