@@ -167,8 +167,6 @@ def arg_parser():
     parser.add_argument("--output_dir", dest="output_dir", type=str,
                         default="./output")
     parser.add_argument("--img_size", dest="img_size", type=int, default=256)
-    parser.add_argument("--lmks_68_file", dest="lmks_68_file", type=str,
-                        default="lmks_68.txt")
     return parser.parse_args()
 
 
@@ -200,21 +198,12 @@ if __name__ == "__main__":
         # lmks.append(line)
     # lmks = np.asarray(lmks).astype(np.float32)
 
-    f_68 = open(args.lmks_68_file, "r")
-    lines_68 = f_68.readlines()
-    f_68.close()
-    dict_68 = {}
-    for line_68 in lines_68:
-        path_68 = line_68.split()[0]
-        line_68 = line_68.split()[1:]
-        if len(line_68)==136:
-            line_68 = np.reshape(line_68, (68, 2)).astype(np.float32)
-            dict_68[path_68] = line_68
 
     # align
     if not os.path.exists(args.output_dir):
         os.mkdir(args.output_dir)
 
+    M=[]
     for i in paths:
         src = dict[i]
         t = cp2tform(src, dst)
@@ -223,14 +212,11 @@ if __name__ == "__main__":
                                    (args.img_size, args.img_size))
         cv2.imwrite("{}/{}".format(args.output_dir, os.path.basename(i)),
                     dst_image)
-        lmks = dict_68[os.path.basename(i)]
-        new_lmks = []
-        for j in lmks:
-            new_lmks.append(np.matmul(t, np.concatenate([j,[1]])))
-    new_lmks = np.reshape(new_lmks, (-1,))
-    new_lmks = np.r_[os.path.basename(i), new_lmks].astype(str)
-    np.savetxt(os.path.join(args.output_dir, "{}".format("test_68.txt")),new_lmks,"%s")
-    print("[*] Finished {}".format(i))
+        M.append([i,t])
+        print("[*] Finished {}".format(i))
+    with open("m.txt","w") as f:
+        f.writelines(M)
+        f.close()
 
 """
         align_param = AlignConfig("align.json")
