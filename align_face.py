@@ -221,13 +221,13 @@ if __name__ == "__main__":
                                    (args.img_size, args.img_size))
         cv2.imwrite("{}/{}".format(args.output_dir, os.path.basename(i)),
                     dst_image)
-        lmks = dict_68[i]
+        lmks = dict_68[os.path.basename(i)]
         new_lmks = []
         for j in lmks:
             new_lmks.append(np.matmul(t, j))
     new_lmks = np.reshape(new_lmks, (-1,))
-    new_lmks = np.r_[i, new_lmks].astype(str)
-    np.savetxt(os.path.join(args.output_dir, "{}".format("test_68.txt")))
+    new_lmks = np.r_[os.path.basename(i), new_lmks].astype(str)
+    np.savetxt(os.path.join(args.output_dir, "{}".format("test_68.txt")),new_lmks,"%s")
     print("[*] Finished {}".format(i))
 
 """
