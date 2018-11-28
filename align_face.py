@@ -213,7 +213,7 @@ if __name__ == "__main__":
                     dst_image)
         # print("[*] Finished {}".format(i))
         flatten = np.reshape(t, (-1,))
-        concat = np.c_[os.path.basename(i), flatten].astype(str).tolist()
+        concat = np.c_[os.path.basename(i), flatten.astype(str)].tolist()
         M.append(concat)
     with open("m.txt","w") as f:
         f.writelines(M)
