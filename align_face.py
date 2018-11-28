@@ -213,10 +213,8 @@ if __name__ == "__main__":
                     dst_image)
         # print("[*] Finished {}".format(i))
         flatten = np.reshape(t, (-1,))
-        concat = np.c_[os.path.basename(i), flatten.astype(str)].tolist()
-        M.append(concat)
-    with open("m.txt","w") as f:
-        f.writelines(M)
+        concat = np.concatenate([os.path.basename(i),flatten])
+        print(concat)
 """
         align_param = AlignConfig("align.json")
         dst_img, pts =align_face(lmks[i],image,align_param)
