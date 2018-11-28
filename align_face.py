@@ -212,7 +212,7 @@ if __name__ == "__main__":
                                    (args.img_size, args.img_size))
         cv2.imwrite("{}/{}".format(args.output_dir, os.path.basename(i)),
                     dst_image)
-        M.append([i,t])
+        M.append([i,t.flatten()])
         print("[*] Finished {}".format(i))
     np.savetxt("m.txt",np.asarray(M),"%s")
 
