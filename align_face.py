@@ -214,9 +214,7 @@ if __name__ == "__main__":
                     dst_image)
         M.append([i,t])
         print("[*] Finished {}".format(i))
-    with open("m.txt","w") as f:
-        f.writelines(M)
-        f.close()
+    np.savetxt("m.txt",np.asarray(M),"%s")
 
 """
         align_param = AlignConfig("align.json")
