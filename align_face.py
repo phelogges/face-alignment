@@ -198,12 +198,11 @@ if __name__ == "__main__":
         # lmks.append(line)
     # lmks = np.asarray(lmks).astype(np.float32)
 
-
     # align
     if not os.path.exists(args.output_dir):
         os.mkdir(args.output_dir)
 
-    M=[]
+    M = []
     for i in paths[:100]:
         src = dict[i]
         t = cp2tform(src, dst)
@@ -212,8 +211,11 @@ if __name__ == "__main__":
                                    (args.img_size, args.img_size))
         cv2.imwrite("{}/{}".format(args.output_dir, os.path.basename(i)),
                     dst_image)
-        #print("[*] Finished {}".format(i))
-        print(i, t)
+        # print("[*] Finished {}".format(i))
+        flatten = np.reshape(t, (-1,))
+        concat = np.c_[os.path.basename(i), flatten]
+        M.append(concat)
+    np.savetxt("m.txt", np.asarray(M), "%s")
 """
         align_param = AlignConfig("align.json")
         dst_img, pts =align_face(lmks[i],image,align_param)
