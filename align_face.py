@@ -111,7 +111,8 @@ def cp2tform(uv, xy):  ## src and dst
 
 
 def align_face(lmks_pts, img, align_param):
-    coord5points = [30.2946, 51.6963, 65.5318, 51.5014, 48.0252, 71.7366, 33.5493, 92.3655, 62.7299, 92.2041]
+    coord5points = [30.2946, 51.6963, 65.5318, 51.5014, 48.0252, 71.7366,
+                    33.5493, 92.3655, 62.7299, 92.2041]
     dst = np.array(coord5points).reshape((5, 2)).astype(np.float32)
     assert (len(lmks_pts) == 10)
     src = np.array(lmks_pts).reshape((5, 2)).astype(np.float32)
@@ -125,7 +126,9 @@ def align_face(lmks_pts, img, align_param):
         else:
             value = 255
         channel = get_channel(img)
-        dst_img = cv2.warpAffine(img, t, (dst_w, dst_h), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT,
+        dst_img = cv2.warpAffine(img, t, (dst_w, dst_h),
+                                 flags=cv2.INTER_LINEAR,
+                                 borderMode=cv2.BORDER_CONSTANT,
                                  borderValue=(value,) * channel)
         dst_pts = GetAffinePoints(src, t)
         return dst_img, dst_pts
@@ -161,26 +164,35 @@ def arg_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument("--lmks_file", dest="lmks_file", type=str,
                         default="lmks.txt")
-    parser.add_argument("--output_dir", dest="output_dir", type=str, default="./output")
+    parser.add_argument("--output_dir", dest="output_dir", type=str,
+                        default="./output")
     parser.add_argument("--img_size", dest="img_size", type=int, default=256)
+    parser.add_argument("--lmks_68_file", dest="lmks_68_file", type=str,
+                        default="lmks_68.txt")
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     args = arg_parser()
     # 5 (x,y) standard landmarks on 1x1 image
-    base_coords = [0.31556875, 0.46157422, 0.68262305, 0.45983398, 0.5002625, 0.64050547, 0.34947187, 0.8246918,
+    base_coords = [0.31556875, 0.46157422, 0.68262305, 0.45983398, 0.5002625,
+                   0.64050547, 0.34947187, 0.8246918,
                    0.65343633, 0.82325078]
 
     # scalar base coords
     # coord5points = base_coords * args.img_size
-    dst = np.array(base_coords).reshape((5, 2)).astype(np.float32) * (args.img_size,args.img_size)
+    dst = np.array(base_coords).reshape((5, 2)).astype(np.float32) * (
+        args.img_size, args.img_size)
 
     # get landmarks
     f = open(args.lmks_file, "r")
     # lmks.txt file write "img_path 10 coords\n" each line
     lines = f.readlines()
     f.close()
+    f_68 = open(args.lmks_68_file, "r")
+    lines_68 = f_68.readlines()
+    f_68.close()
+
     lmks = []
     path = []
     for line in lines:
@@ -190,6 +202,12 @@ if __name__ == "__main__":
         lmks.append(line)
     lmks = np.asarray(lmks).astype(np.float32)
 
+    dict_68 = {}
+    for i in lines_68:
+        path = i.split()[0]
+        i = i.split()[1:]
+        i = np.reshape(i, (68, 2))
+        dict_68[path] = i
     # align
     if not os.path.exists(args.output_dir):
         os.mkdir(args.output_dir)
@@ -197,9 +215,19 @@ if __name__ == "__main__":
         src = lmks[i]
         t = cp2tform(src, dst)
         image = cv2.imread(path[i], 1)
-        dst_image = cv2.warpAffine(image.copy(), t, (args.img_size, args.img_size))
-        cv2.imwrite("{}/{}".format(args.output_dir, os.path.basename(path[i])), dst_image)
+        dst_image = cv2.warpAffine(image.copy(), t,
+                                   (args.img_size, args.img_size))
+        cv2.imwrite("{}/{}".format(args.output_dir, os.path.basename(path[i])),
+                    dst_image)
         print("[*] Finished {}".format(path[i]))
+        new_lmks = []
+        for j in range(68):
+            new_lmk = np.matmul(t, dict_68[path[i]][j])
+            new_lmks.append(new_lmk)
+        new_lmks = np.asarray(new_lmks)
+        new_lmks = new_lmks.flatten()
+        new_lmks = np.r_[path[i], new_lmks]
+        np.savetxt("lmks_68.txt", new_lmks, "%s", newline="\t")
 """
         align_param = AlignConfig("align.json")
         dst_img, pts =align_face(lmks[i],image,align_param)
