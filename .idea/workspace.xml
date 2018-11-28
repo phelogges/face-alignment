@@ -94,8 +94,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/align_face.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="209" column="31" selection-start-line="209" selection-start-column="31" selection-end-line="209" selection-end-column="31" />
+            <state relative-caret-position="507">
+              <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <marker date="1543393315730" expanded="true" signature="5008:5503" ph="..." />
@@ -339,8 +339,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/align_face.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="209" column="31" selection-start-line="209" selection-start-column="31" selection-end-line="209" selection-end-column="31" />
+        <state relative-caret-position="507">
+          <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <marker date="1543393315730" expanded="true" signature="5008:5503" ph="..." />
