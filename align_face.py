@@ -207,7 +207,8 @@ if __name__ == "__main__":
     for line_68 in lines_68:
         path_68 = line_68.split()[0]
         line_68 = line_68.split()[1:]
-        print(len(line_68))
+        if len(line_68)!=136:
+            print(lines_68.index(line_68))
         line_68 = np.reshape(line_68, (68, 2)).astype(np.float32)
         dict_68[path_68] = line_68
 
