@@ -4,10 +4,8 @@ import argparse
 
 def arg_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--m_file", dest="lmks_file", type=str,
+    parser.add_argument("--m_file", dest="m_file", type=str,
                         default="m.txt")
-    parser.add_argument("--output_dir", dest="output_dir", type=str,
-                        default="./output")
     parser.add_argument("--lmk_68_file", dest="lmk_68_file", type=str,
                         default="bai_life_tmp.txt")
     return parser.parse_args()
