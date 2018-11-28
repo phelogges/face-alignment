@@ -214,7 +214,9 @@ if __name__ == "__main__":
         # print("[*] Finished {}".format(i))
         flatten = np.reshape(t, (-1,))
         concat = np.concatenate([[os.path.basename(i)],flatten])
-        print(concat)
+        M.append(concat)
+    m=np.asarray(M)
+    np.savetxt("m.txt",m,"%s")
 """
         align_param = AlignConfig("align.json")
         dst_img, pts =align_face(lmks[i],image,align_param)
