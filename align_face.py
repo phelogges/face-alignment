@@ -225,7 +225,7 @@ if __name__ == "__main__":
         lmks = dict_68[os.path.basename(i)]
         new_lmks = []
         for j in lmks:
-            new_lmks.append(np.matmul(t, j))
+            new_lmks.append(np.matmul(t, np.concatenate([j,[1]])))
     new_lmks = np.reshape(new_lmks, (-1,))
     new_lmks = np.r_[os.path.basename(i), new_lmks].astype(str)
     np.savetxt(os.path.join(args.output_dir, "{}".format("test_68.txt")),new_lmks,"%s")
