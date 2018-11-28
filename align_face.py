@@ -204,7 +204,7 @@ if __name__ == "__main__":
         os.mkdir(args.output_dir)
 
     M=[]
-    for i in paths:
+    for i in paths[:100]:
         src = dict[i]
         t = cp2tform(src, dst)
         image = cv2.imread(i, 1)
@@ -212,7 +212,7 @@ if __name__ == "__main__":
                                    (args.img_size, args.img_size))
         cv2.imwrite("{}/{}".format(args.output_dir, os.path.basename(i)),
                     dst_image)
-        M.append([i,t.flatten()])
+        M.append([i,np.reshape(t,(-1,))])
         print("[*] Finished {}".format(i))
     np.savetxt("m.txt",np.asarray(M),"%s")
 
