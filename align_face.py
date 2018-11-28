@@ -203,7 +203,7 @@ if __name__ == "__main__":
         os.mkdir(args.output_dir)
 
     M = []
-    for i in paths[:100]:
+    for i in paths:
         src = dict[i]
         t = cp2tform(src, dst)
         image = cv2.imread(i, 1)
@@ -215,6 +215,8 @@ if __name__ == "__main__":
         flatten = np.reshape(t, (-1,))
         concat = np.concatenate([[os.path.basename(i)],flatten])
         M.append(concat)
+        if paths.index(i)%500==0:
+            print("Processed {}/{}".format(paths.index(i),len(paths)))
     m=np.asarray(M)
     np.savetxt("m.txt",m,"%s")
 """
