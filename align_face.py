@@ -189,45 +189,47 @@ if __name__ == "__main__":
     # lmks.txt file write "img_path 10 coords\n" each line
     lines = f.readlines()
     f.close()
+    paths = []
+    dict = {}
+    for line in lines:
+        path = line.split()[0]
+        line = line.split()[1:]
+        line = np.reshape(line, (5, 2)).astype(np.float32)
+        paths.append(path)
+        dict[path] = line
+        # lmks.append(line)
+    # lmks = np.asarray(lmks).astype(np.float32)
+
     f_68 = open(args.lmks_68_file, "r")
     lines_68 = f_68.readlines()
     f_68.close()
-
-    lmks = []
-    path = []
-    for line in lines:
-        path.append(line.split()[0])
-        line = line.split()[1:]
-        line = np.reshape(line, (5, 2))
-        lmks.append(line)
-    lmks = np.asarray(lmks).astype(np.float32)
-
     dict_68 = {}
     for i in lines_68:
-        path = i.split()[0]
-        i = i.split()[1:]
-        i = np.reshape(i, (68, 2))
-        dict_68[path] = i
+        lmks = i.split()[1:]
+        lmks = np.reshape(lmks, (68, 2)).astype(np.float32)
+        dict_68[i.split()[0]] = lmks
+
     # align
     if not os.path.exists(args.output_dir):
         os.mkdir(args.output_dir)
-    for i in range(len(lmks)):
-        src = lmks[i]
+
+    for i in paths:
+        src = dict[i]
         t = cp2tform(src, dst)
-        image = cv2.imread(path[i], 1)
+        image = cv2.imread(i, 1)
         dst_image = cv2.warpAffine(image.copy(), t,
                                    (args.img_size, args.img_size))
-        cv2.imwrite("{}/{}".format(args.output_dir, os.path.basename(path[i])),
+        cv2.imwrite("{}/{}".format(args.output_dir, os.path.basename(i)),
                     dst_image)
-        print("[*] Finished {}".format(path[i]))
+        lmks = dict_68[i]
         new_lmks = []
-        for j in range(68):
-            new_lmk = np.matmul(t, dict_68[path[i]][j])
-            new_lmks.append(new_lmk)
-        new_lmks = np.asarray(new_lmks)
-        new_lmks = new_lmks.flatten()
-        new_lmks = np.r_[path[i], new_lmks]
-        np.savetxt("lmks_68.txt", new_lmks, "%s", newline="\t")
+        for j in lmks:
+            new_lmks.append(np.matmul(t, j))
+    new_lmks = np.reshape(new_lmks, (-1,))
+    new_lmks = np.r_[i, new_lmks].astype(str)
+    np.savetxt(os.path.join(args.output_dir, "{}".format("test_68.txt")))
+    print("[*] Finished {}".format(i))
+
 """
         align_param = AlignConfig("align.json")
         dst_img, pts =align_face(lmks[i],image,align_param)
