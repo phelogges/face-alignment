@@ -212,8 +212,8 @@ if __name__ == "__main__":
         cv2.imwrite("{}/{}".format(args.output_dir, os.path.basename(i)),
                     dst_image)
         # print("[*] Finished {}".format(i))
-        flatten = np.reshape(t, (-1,1))
-        concat = np.concatenate([os.path.basename(i),flatten])
+        flatten = np.reshape(t, (-1,))
+        concat = np.concatenate([[os.path.basename(i)],flatten])
         print(concat)
 """
         align_param = AlignConfig("align.json")
