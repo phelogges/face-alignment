@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e6675ce-ae42-466f-ae45-aa193cf3ce2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/align_face.py" beforeDir="false" afterPath="$PROJECT_DIR$/align_face.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/m.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,36 +71,50 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="1450" />
-          <entry key="py" value="1569" />
+          <entry key="py" value="2231" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="3019" />
+          <entry key="Python" value="3681" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="py" value="1" />
           <entry key="txt" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="17" />
+          <entry key="Python" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/align_face.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="216" column="20" selection-start-line="216" selection-start-column="20" selection-end-line="216" selection-end-column="20" />
+            <state relative-caret-position="258">
+              <caret line="170" lean-forward="true" selection-start-line="170" selection-end-line="170" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <marker date="1543408549504" expanded="true" signature="5008:5383" ph="..." />
+                <marker date="1543408907044" expanded="true" signature="5008:5383" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/m.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,6 +139,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/align_face.py" />
+        <option value="$PROJECT_DIR$/m.py" />
       </list>
     </option>
   </component>
@@ -211,8 +228,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-1088" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12170706" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12170706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -223,7 +241,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.33001658" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49947312" visible="true" weight="0.27193934" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49947312" visible="true" weight="0.27193934" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50052685" side_tool="true" weight="0.13449024" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.2979415" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -338,11 +356,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/align_face.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="216" column="20" selection-start-line="216" selection-start-column="20" selection-end-line="216" selection-end-column="20" />
+        <state relative-caret-position="258">
+          <caret line="170" lean-forward="true" selection-start-line="170" selection-end-line="170" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <marker date="1543408549504" expanded="true" signature="5008:5383" ph="..." />
+            <marker date="1543408907044" expanded="true" signature="5008:5383" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
