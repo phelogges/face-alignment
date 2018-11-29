@@ -22,7 +22,7 @@ def display(img_name, file_name):
     pts = dict[os.path.basename(img_name)]
     i = 0
     while i < 68:
-        cv2.line(img, pts[i], pts[i + 1], (0, 255, 0), 5)
+        cv2.line(img, tuple(pts[i]), tuple(pts[i + 1]), (0, 255, 0), 5)
         i += 1
     cv2.imshow("Draw landmarks", img)
     cv2.waitKey()
