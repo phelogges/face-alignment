@@ -168,7 +168,7 @@ def arg_parser():
                         default="./output")
     parser.add_argument("--img_size", dest="img_size", type=int, default=256)
     return parser.parse_args()
-
+f[3]
 
 if __name__ == "__main__":
     args = arg_parser()
