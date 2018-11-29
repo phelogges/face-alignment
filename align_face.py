@@ -167,6 +167,7 @@ def arg_parser():
     parser.add_argument("--output_dir", dest="output_dir", type=str,
                         default="./output")
     parser.add_argument("--img_size", dest="img_size", type=int, default=256)
+    parser.add_argument("--img_dir", dest="img_dir", type=str, default="")
     return parser.parse_args()
 
 
@@ -206,19 +207,19 @@ if __name__ == "__main__":
     for i in paths:
         src = dict[i]
         t = cp2tform(src, dst)
-        image = cv2.imread(i, 1)
+        image = cv2.imread(os.path.join(args.img_dir, i), 1)
         dst_image = cv2.warpAffine(image.copy(), t,
                                    (args.img_size, args.img_size))
         cv2.imwrite("{}/{}".format(args.output_dir, os.path.basename(i)),
                     dst_image)
         # print("[*] Finished {}".format(i))
         flatten = np.reshape(t, (-1,))
-        concat = np.concatenate([[os.path.basename(i)],flatten])
+        concat = np.concatenate([[os.path.basename(i)], flatten])
         M.append(concat)
-        if paths.index(i)%500==0:
-            print("Processed {}/{}".format(paths.index(i),len(paths)))
-    m=np.asarray(M)
-    np.savetxt("m.txt",m,"%s")
+        if paths.index(i) % 500 == 0:
+            print("Processed {}/{}".format(paths.index(i), len(paths)))
+    m = np.asarray(M)
+    np.savetxt("m.txt", m, "%s")
 """
         align_param = AlignConfig("align.json")
         dst_img, pts =align_face(lmks[i],image,align_param)
