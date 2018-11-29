@@ -169,6 +169,7 @@ def arg_parser():
     parser.add_argument("--img_size", dest="img_size", type=int, default=256)
     return parser.parse_args()
 
+
 if __name__ == "__main__":
     args = arg_parser()
     # 5 (x,y) standard landmarks on 1x1 image
