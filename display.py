@@ -9,6 +9,7 @@ def arg_parser():
     parser.add_argument("--file_name", type=str, default="lmks_68.txt")
     parser.add_argument("--img_dir", type=str, default="")
     parser.add_argument("--name", type=str, default="")
+    return parser.parse_args()
 
 
 def display(img_name, file_name):
