@@ -27,7 +27,7 @@ if __name__ == "__main__":
     dict = {}
     for i in f:
         img_name.append(i[0])
-        dict[i[0]] = np.clip(i[1:].astype(np.float32), 0., None).reshape(
+        dict[i[0]] = i[1:].astype(np.float32).reshape(
             (68, 2))
 
     for name in img_name:
