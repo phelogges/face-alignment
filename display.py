@@ -14,6 +14,7 @@ def arg_parser():
 
 def display(img_name, file_name):
     f = np.loadtxt(file_name, str)
+
     dict = {}
     for i in f:
         dict[i[0]] = np.clip(i[1:].astype(np.float32), 0., None).reshape(
@@ -25,9 +26,8 @@ def display(img_name, file_name):
         cv2.circle(img,tuple(pts[i]),5,(0,255,0),2)
         i+=1
     cv2.imshow("Draw landmarks", img)
-    cv2.waitKey()
+    cv2.waitKey(0)
     cv2.destroyAllWindows()
-    return None
 
 
 if __name__ == "__main__":
