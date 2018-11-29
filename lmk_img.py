@@ -14,7 +14,7 @@ def arg_parser():
 
 
 def img_creater(img, lmks, r):
-    img = cv2.circle(img, lmks, r, (1, 1), -1)
+    img = cv2.circle(img, lmks, r, (255, 255), -1)
     return img
 
 
@@ -35,6 +35,7 @@ if __name__ == "__main__":
         img = np.zeros(shape, np.float32) - np.ones(shape, np.float32)
         for pt in dict[name]:
             img = img_creater(img, tuple(pt), args.r)
+        img = img / 127.5 - 1.
         cv2.imwrite(os.path.join(args.dir_name, name), img)
         if img_name.index(name) % 500 == 0:
             print(

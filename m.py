@@ -39,8 +39,9 @@ if __name__ == "__main__":
             for j in range(68):
                 res = np.matmul(m_dict[i], np.concatenate(
                     [x_dict[i][j], np.array([1])])).flatten().tolist()
+                res=np.clip(res,0.,None)
                 a.append(res)
             a = np.concatenate([[i],np.reshape(a,(-1,))])
         b.append(a)
     b = np.asarray(b, str)
-    np.savetxt("mx.txt", b, "%s")
+    np.savetxt("lmks.txt", b, "%s")
