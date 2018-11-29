@@ -34,7 +34,7 @@ if __name__ == "__main__":
         shape = (256, 256)
         img = np.zeros(shape, np.float32) - np.ones(shape, np.float32)
         for pt in dict[name]:
-            img = img_creater(img, pt, args.r)
+            img = img_creater(img, tuple(pt), args.r)
         cv2.imwrite(os.path.join(args.dir_name, name), img)
         if img_name.index(name) % 500 == 0:
             print(
