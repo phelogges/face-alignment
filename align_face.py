@@ -212,14 +212,14 @@ if __name__ == "__main__":
                                    (args.img_size, args.img_size))
         cv2.imwrite("{}/{}".format(args.output_dir, os.path.basename(i)),
                     dst_image)
-        # print("[*] Finished {}".format(i))
-        flatten = np.reshape(t, (-1,))
-        concat = np.concatenate([[os.path.basename(i)], flatten])
-        M.append(concat)
+
+        #flatten = np.reshape(t, (-1,))
+        #concat = np.concatenate([[os.path.basename(i)], flatten])
+        #M.append(concat)
         if paths.index(i) % 500 == 0:
             print("Processed {}/{}".format(paths.index(i), len(paths)))
-    m = np.asarray(M)
-    np.savetxt("m.txt", m, "%s")
+    #m = np.asarray(M)
+    #np.savetxt("m.txt", m, "%s")
 """
         align_param = AlignConfig("align.json")
         dst_img, pts =align_face(lmks[i],image,align_param)
