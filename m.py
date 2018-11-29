@@ -44,4 +44,4 @@ if __name__ == "__main__":
             a = np.concatenate([[i],np.reshape(a,(-1,))])
         b.append(a)
     b = np.asarray(b, str)
-    np.savetxt("lmks.txt", b, "%s")
+    np.savetxt("lmks_68_tmp.txt", b, "%s")
