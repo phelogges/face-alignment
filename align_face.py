@@ -217,7 +217,7 @@ if __name__ == "__main__":
         concat = np.concatenate([[os.path.basename(i)], flatten])
         M.append(concat)
         if paths.index(i) % 500 == 0:
-            print("Processed {}/{}".format(paths.index(i), len(paths)))
+            print("Processed {}/{}".format(paths.index(i), len(cd )))
     m = np.asarray(M)
     np.savetxt("m.txt", m, "%s")
 """
