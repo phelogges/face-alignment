@@ -20,7 +20,7 @@ def img_creater(img, lmks, r):
 
 
 def draw_line(img, pt1, pt2):
-    img = cv2.line(img, pt1, pt2, (255, 255))
+    img = cv2.line(img, tuple(pt1), tuple(pt2), (255, 255))
     return img
 
 
