@@ -7,7 +7,6 @@ import os
 def arg_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument("--r", type=int, default=5, help="radios of circle")
-    # parser.add_argument("--img_name", type=str, default="")
     parser.add_argument("--dir_name", type=str, default="")
     parser.add_argument("--lmk_file", type=str, default="")
     parser.add_argument("--draw_type", type=str, default="draw_line",
@@ -39,7 +38,7 @@ if __name__ == "__main__":
 
     for name in img_name:
         shape = (256, 256)
-        img = np.zeros(shape, np.float32) - np.ones(shape, np.float32)
+        img = np.zeros(shape, np.uint8)
         if args.draw_type == "draw_points":
             for pt in dict[name]:
                 img = img_creater(img, tuple(pt), args.r)
@@ -76,7 +75,9 @@ if __name__ == "__main__":
             for i in range(len(pts9) - 1):
                 img = draw_line(img, pts9[i], pts9[i + 1])
                 img = draw_line(img, pts9[0], pts9[-1])
-        img = img / 127.5 - 1.
+        if args.draw_type == "fill":
+            pts = np.concatenate([dict[name][:17],dict[name][26:23:-1],dict[name][21:18:-1]])
+            cv2.fillConvexPoly(img,np.array(pts, dtype=np.int32), [255,255])  # an error will raise if not convert pts to np.int32
         cv2.imwrite(os.path.join(args.dir_name, name), img)
         if img_name.index(name) % 500 == 0:
             print(
